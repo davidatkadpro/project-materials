@@ -54,6 +54,7 @@ class ProjectManager:
         self.orders[order_id] = order
         return order
 
+
     def generate_orders(self, project_id: int) -> List[Order]:
         """Create orders for all quotes attached to a project."""
         orders = []

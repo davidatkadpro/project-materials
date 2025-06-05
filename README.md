@@ -48,6 +48,7 @@ Pydantic models in `app/models.py` define the basic project entities:
 - `Quote` representing supplier pricing for materials or services
 - `Order` tracking the status of a quote and its final price
 
+
 ## Business Logic
 
 `app/logic.py` contains helper functions and a `ProjectManager` class providing an in-memory
@@ -76,3 +77,4 @@ exporting data for reporting:
 FastAPI also serves a simple HTML front end under the `/ui` path. It uses Jinja2 templates located in `app/templates` to render pages for viewing and creating data. Each section lists existing items and includes a form for adding new ones.
 
 Start the development server and open `http://127.0.0.1:8000/ui` in your browser to interact with projects, materials, services, suppliers, quotes, and orders through a basic web interface.
+
