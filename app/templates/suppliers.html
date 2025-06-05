@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Suppliers{% endblock %}
+
+{% block content %}
+<h2>Suppliers</h2>
+<ul>
+  {% for s in suppliers %}
+    <li>{{ s.id }} - {{ s.name }}</li>
+  {% else %}
+    <li>No suppliers</li>
+  {% endfor %}
+</ul>
+
+<h3>Add Supplier</h3>
+<form method="post">
+    <label>Id <input type="number" name="id" required></label><br/>
+    <label>Name <input type="text" name="name" required></label><br/>
+    <label>Contact <input type="text" name="contact"></label><br/>
+    <label>Materials (comma-separated ids) <input type="text" name="materials"></label><br/>
+    <button type="submit">Create</button>
+</form>
+{% endblock %}

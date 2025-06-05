@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Project Materials{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <a href="/ui">Home</a> |
+        <a href="/ui/projects">Projects</a> |
+        <a href="/ui/materials">Materials</a> |
+        <a href="/ui/services">Services</a> |
+        <a href="/ui/suppliers">Suppliers</a> |
+        <a href="/ui/quotes">Quotes</a> |
+        <a href="/ui/orders">Orders</a>
+    </nav>
+    <hr/>
+    {% block content %}{% endblock %}
+</body>
+</html>
