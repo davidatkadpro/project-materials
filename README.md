@@ -19,6 +19,21 @@ Creates a comprehensive tool to manage building project materials and orders
 
 The API root at `http://127.0.0.1:8000/` will return a simple JSON message.
 
+### Available API Endpoints
+
+`app.main` exposes a small REST interface for managing projects. The most
+useful routes are:
+
+- `POST /projects` and `GET /projects` - create and list projects
+- `POST /materials` and `GET /materials` - manage material catalog entries
+- `POST /services` and `GET /services` - manage available services
+- `POST /suppliers` and `GET /suppliers` - register suppliers
+- `POST /quotes` - attach a quote for a material or service
+- `GET /projects/{project_id}/quotes` - list quotes for a project
+- `GET /projects/{project_id}/total` - return the total cost of a project
+- `POST /orders` - create an order from a quote
+- `GET /orders` - list orders that have been created
+
 ## Core Data Models
 
 Pydantic models in `app/models.py` define the basic project entities:
