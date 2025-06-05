@@ -39,3 +39,4 @@ implementation of the core operations:
 - `place_order()` creates an order from a quote
 - `get_project_total()` calculates the total cost for a project
 - `best_quote()` finds the cheapest quote for a material or service
+
