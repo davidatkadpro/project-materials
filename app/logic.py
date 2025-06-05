@@ -54,6 +54,34 @@ class ProjectManager:
         self.orders[order_id] = order
         return order
 
+
+    def generate_orders(self, project_id: int) -> List[Order]:
+        """Create orders for all quotes attached to a project."""
+        orders = []
+        for quote in self.get_project_quotes(project_id):
+            orders.append(self.place_order(quote.id))
+        return orders
+
+    def update_order(
+        self,
+        order_id: int,
+        *,
+        status: Optional[OrderStatus] = None,
+        final_price: Optional[float] = None,
+    ) -> Order:
+        """Update order status or final price."""
+        if order_id not in self.orders:
+            raise ValueError("Order does not exist")
+        order = self.orders[order_id]
+        if status is not None:
+            order.status = status
+        if final_price is not None:
+            order.final_price = final_price
+            # update quote price when order finalized
+            if order.quote_id in self.quotes:
+                self.quotes[order.quote_id].price = final_price
+        return order
+
     def get_project_quotes(self, project_id: int) -> List[Quote]:
         return [q for q in self.quotes.values() if q.project_id == project_id]
 

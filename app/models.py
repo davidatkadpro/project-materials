@@ -54,3 +54,5 @@ class Order(BaseModel):
     id: int
     quote_id: int
     status: OrderStatus = OrderStatus.pending
+    final_price: Optional[float] = None
+

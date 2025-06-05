@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Quotes{% endblock %}
+
+{% block content %}
+<h2>Quotes</h2>
+<ul>
+  {% for q in quotes %}
+    <li>{{ q.id }} - Project {{ q.project_id }} Supplier {{ q.supplier_id }} : {{ q.quantity }} @ {{ q.price }}</li>
+  {% else %}
+    <li>No quotes</li>
+  {% endfor %}
+</ul>
+
+<h3>Add Quote</h3>
+<form method="post">
+    <label>Id <input type="number" name="id" required></label><br/>
+    <label>Project ID <input type="number" name="project_id" required></label><br/>
+    <label>Supplier ID <input type="number" name="supplier_id" required></label><br/>
+    <label>Material ID <input type="number" name="material_id"></label><br/>
+    <label>Service ID <input type="number" name="service_id"></label><br/>
+    <label>Quantity <input type="number" step="0.01" name="quantity" required></label><br/>
+    <label>Price <input type="number" step="0.01" name="price" required></label><br/>
+    <button type="submit">Create</button>
+</form>
+{% endblock %}
