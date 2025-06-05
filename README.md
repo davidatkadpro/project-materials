@@ -28,3 +28,15 @@ Pydantic models in `app/models.py` define the basic project entities:
 - `Service` for tasks like electrical or plumbing
 - `Quote` representing supplier pricing for materials or services
 - `Order` tracking the status of a quote
+
+## Business Logic
+
+`app/logic.py` contains helper functions and a `ProjectManager` class providing an in-memory
+implementation of the core operations:
+
+- `calculate_quantity(base_measure, multiplier)` returns a quantity using a simple multiplier
+- `ProjectManager` stores projects, materials, suppliers, quotes, and orders
+- `place_order()` creates an order from a quote
+- `get_project_total()` calculates the total cost for a project
+- `best_quote()` finds the cheapest quote for a material or service
+
