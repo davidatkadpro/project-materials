@@ -355,11 +355,3 @@ def export_materials(format: str = "csv"):
     else:
         raise HTTPException(status_code=400, detail="Unsupported format")
 
-from fastapi import FastAPI
-
-app = FastAPI()
-
-@app.get("/")
-def read_root():
-    return {"message": "Project materials API"}
-
