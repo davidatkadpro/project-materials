@@ -19,6 +19,15 @@ Creates a comprehensive tool to manage building project materials and orders
 
 The API root at `http://127.0.0.1:8000/` will return a simple JSON message.
 
+### Running Tests
+
+Install the optional test dependencies and run the suite with `pytest`:
+
+```bash
+pip install -r requirements.txt
+pytest
+```
+
 ### Available API Endpoints
 
 `app.main` exposes a small REST interface for managing projects. The most
